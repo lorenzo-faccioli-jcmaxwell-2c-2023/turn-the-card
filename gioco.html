@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gira la Carta</title>
+
+    <style>
+        img {
+            width: 100px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="tavolo"></div>
+    <script>
+        let carte = ["pokemonretro.jpg", "POGO_IT_22-2x.jpg","pokemonretro.jpg", "POGO_IT_22-2x.jpg","images (2).jfif","pokemon uyuye.webp","images (1).jfif","images (2).jfif","pokemon uyuye.webp","images (1).jfif"]
+        let tavolo = document.querySelector("#tavolo")
+        carte.forEach(element => {
+            tavolo.innerHTML += '<img id="' + element + '" src="pokemon-card-back.png" onclick="gira(this)" />' //gira la carta     
+
+        });
+        function gira(carta) {
+
+            console.log(carta.id)
+            if (carta.src.includes('back'))
+
+                carta.src = carta.id
+            else
+                carta.src = 'pokemon-card-back.png'
+        }
+    </script>
+</body>
+
+</html>
